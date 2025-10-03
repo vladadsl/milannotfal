@@ -8,7 +8,7 @@ The Notfall Card is a life-saving ID and digital profile system. Each user recei
 - Unique QR code + PIN auto-generated on registration
 - Emergency profile with:
   - Name, allergies, blood type
-  - Emergency contacts (one-click call)
+  - Emergency contacts (one-click call)s
   - Conditions, medications, dosages (PIN protected)
 - Users can update data via app using their account
 - Secure storage with encryption
@@ -25,4 +25,4 @@ The Notfall Card is a life-saving ID and digital profile system. Each user recei
 - **UI:** Tailwind CSS + Alpine.js / Vue.js (via Inertia)
 
 ---
-
+s
