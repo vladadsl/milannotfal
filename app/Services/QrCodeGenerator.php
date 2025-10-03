@@ -16,7 +16,16 @@ class QrCodeGenerator
             'svgUseFillAttributes' => false,
         ]);
 
-        return (new QRCode($options))->render($content);
+        $result = (new QRCode($options))->render($content);
+
+        if (str_starts_with($result, 'data:image/svg+xml;base64,')) {
+            $base64 = substr($result, strlen('data:image/svg+xml;base64,'));
+            $decoded = base64_decode($base64, true);
+
+            return $decoded !== false ? $decoded : $result;
+        }
+
+        return $result;
     }
 
     public function generateDataUri(string $content, int $scale = 6): string
