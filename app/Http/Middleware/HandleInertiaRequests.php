@@ -34,6 +34,12 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'flash' => [
+                'banner' => fn () => $request->session()->get('flash.banner'),
+                'bannerStyle' => fn () => $request->session()->get('flash.bannerStyle'),
+                'pin' => fn () => $request->session()->get('flash.pin'),
+                'qrRotated' => fn () => $request->session()->get('flash.qr_rotated'),
+            ],
         ];
     }
 }
